@@ -1,0 +1,49 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.nav a:hover {
+  color: #0070f3;
+}
+.menu-item {
+  position: relative;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: .5rem;
+}
+.submenu li {
+  padding: .5rem 1rem;
+}
+.submenu li a {
+  color: #333;
+}
+.menu-item:hover .submenu {
+  display: block;
+}
+
+
+
