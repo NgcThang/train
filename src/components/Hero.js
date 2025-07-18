@@ -1,29 +1,20 @@
 import React from 'react';
 import '../styles/components/hero.css';
-
-// Import trực tiếp hero-bg từ assets
 import heroBg from '../assets/images/hero-bg.jpg';
 
-export default function Hero({ title, subtitle, buttonText, buttonLink }) {
+export default function Hero({ title, subtitle }) {
   return (
-    <section
+    <div
       className="hero"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}
+      style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="hero-content container">
-        <h1>{title}</h1>
-        <p>{subtitle}</p>
-        <a href={buttonLink} className="btn hero-btn">
-          {buttonText}
-        </a>
+      <div className="hero__content">
+        <h1 className="hero__title">{title}</h1>
+        <p className="hero__subtitle">{subtitle}</p>
       </div>
-    </section>
+    </div>
   );
 }
+
 
 

@@ -1,79 +1,49 @@
 import React from 'react';
-import Hero    from '../components/Hero';
-import Section from '../components/Section';
-import Slider  from '../components/Slider';
-import '../styles/components/hero.css';
-
-import c1 from '../assets/images/carousel1.jpg';
-import c2 from '../assets/images/carousel2.jpg';
-import c3 from '../assets/images/carousel3.jpg';
-import c4 from '../assets/images/carousel4.jpg';
+import Hero from '../components/Hero';
+import Slider from '../components/Slider';
+import '../styles/components/section.css';
 
 export default function HomePage() {
   return (
-    <>
+    <main>
+      {/* Hero section */}
       <Hero
-        title="The Incredible 90-YEAR JOURNEY"
-        subtitle="Apparel Manufacturing Excellence Since 1930"
-        buttonText="Discover"
-        buttonLink="#about"
+        title="Over 90 Years of Experience in the Textile Industry"
+        subtitle="In 1931, Carla Søren Thygesen began a journey that would link the name Thygesen Textile Group (Denmark) with quality in designing, manufacturing and selling textile products."
       />
 
-      <Section id="carousel">
-        <Slider images={[c1,c2,c3,c4]} />
-      </Section>
+      {/* Carousel */}
+      <Slider />
 
-      {/* Các section tiếp theo (About / Capabilities / Stats / CTA) */}
-      <Section id="about">
-        <div className="about-content">
-          <h2>Over 90 Years of Heritage & Innovation</h2>
+      {/* Mission / Vision / Core Values */}
+      <section className="values">
+        <div className="values__item">
+          <h3>Mission</h3>
           <p>
-            Thygesen Apparel has been at the forefront of quality apparel manufacturing, offering custom solutions for global brands. Our heritage and commitment drive us to exceed expectations.
+            To inspire and motivate change toward <strong>True Values</strong> and{' '}
+            <strong>Sustainable Development.</strong>
           </p>
-          <a href="/about" className="btn">Read More</a>
         </div>
-      </Section>
-
-      <Section id="capabilities">
-        <h2>Our Capabilities</h2>
-        <div className="cards">
-          <div className="card">
-            <h3>Activewear</h3>
-            <p>High-performance fabrics and precise manufacturing.</p>
-          </div>
-          <div className="card">
-            <h3>Casualwear</h3>
-            <p>Comfort and style for everyday wear.</p>
-          </div>
-          <div className="card">
-            <h3>Kidswear</h3>
-            <p>Durable, safe, and playful clothing lines.</p>
-          </div>
+        <div className="values__item">
+          <h3>Vision</h3>
+          <p>
+            To become a prestigious textile supplier in Vietnam and worldwide while continually
+            bringing <strong>True Added Values</strong> to our customers, partners, employees, and
+            shareholders.
+          </p>
         </div>
-      </Section>
-
-      <Section id="stats">
-        <div className="stats-grid">
-          <div className="stat">
-            <h3>800K</h3>
-            <p>pcs/month capacity</p>
-          </div>
-          <div className="stat">
-            <h3>16</h3>
-            <p>steps process</p>
-          </div>
-          <div className="stat">
-            <h3>45+</h3>
-            <p>years industry experience</p>
-          </div>
+        <div className="values__item">
+          <h3>Core Values</h3>
+          <p>
+            From the beginning, Thygesen Textile Vietnam has strived to translate our core values
+            into everything we do. <strong>Truthfulness</strong>, <strong>Compassion</strong>,
+            <strong>Kindness</strong>, <strong>Commitment</strong>, and{' '}
+            <strong>Persistence</strong> are what made us a prestigious and sustainable textile
+            manufacturing company today.
+          </p>
         </div>
-      </Section>
-
-      <Section id="contact-cta">
-        <h2>Ready to Start Your Project?</h2>
-        <a href="/contact" className="btn">Contact Us</a>
-      </Section>
-    </>
+      </section>
+    </main>
   );
 }
 

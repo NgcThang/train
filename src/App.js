@@ -14,6 +14,20 @@ import PostDetail    from './pages/PostDetail';
 import ProductDetail from './pages/ProductDetail';
 import ContactPage   from './pages/ContactPage';
 
+console.log({
+  TopHead,
+  Header,
+  Footer,
+  HomePage,
+  AboutPage,
+  ServicesPage,
+  ProductsPage,
+  NewsPage,
+  PostDetail,
+  ProductDetail,
+  ContactPage
+})
+
 export default function App() {
   return (
     <>
