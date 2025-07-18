@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';  // ← import thêm
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 import './styles/main.css';
@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 AOS.init({ once: true });
 
 ReactDOM.render(
-  <BrowserRouter>        {/* ← bọc Router ở đây */}
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root')
