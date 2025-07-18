@@ -1,19 +1,18 @@
-import React from 'react';
-import '../styles/components/hero.css';
-import heroImg from '../assets/images/hero-bg.jpg';
+import React from 'react'
+import '../styles/components/hero.css'
 
-export default function Hero({ title, subtitle }) {
+export default function Hero({ title, subtitle, image }) {
   return (
-    <div className="hero-container">
-      <div className="hero-image">
-        <img src={heroImg} alt="Hero" />
-      </div>
-      <div className="hero-text">
+    <section className="hero-container">
+      <div className="hero-content">
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>
-    </div>
-  );
+      <div className="hero-image">
+        <img src={image} alt="Hero background"/>
+      </div>
+    </section>
+  )
 }
 
 

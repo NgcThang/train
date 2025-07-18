@@ -1,40 +1,35 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper';          
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import '../styles/components/slider.css';
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, A11y } from 'swiper'
 
-const images = [
-  require('../assets/images/carousel1.jpg'),
-  require('../assets/images/carousel2.jpg'),
-  require('../assets/images/carousel3.jpg'),
-  require('../assets/images/carousel4.jpg'),
-];
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import '../styles/components/slider.css'
 
-export default function Slider() {
+export default function Slider({ images }) {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}                  // ← đăng ký 2 module này
-      navigation                                        // ← bật nút next/prev
-      pagination={{ clickable: true }}                  // ← bật dot pagination
-      loop                                              // ← cho slider chạy vòng lặp
+      modules={[Navigation, Pagination, A11y]}
       spaceBetween={20}
-      slidesPerView={1}
+      slidesPerView={4}           // luôn show 4 slides
+      navigation                  // mũi tên
+      pagination={{ clickable: true }} // chấm pagination
+      loop
       breakpoints={{
+        0:    { slidesPerView: 1 },
         640:  { slidesPerView: 2 },
-        1024: { slidesPerView: 4 }
+        1024: { slidesPerView: 4 },
       }}
-      style={{ padding: '2rem 5%' }}
+      className="my-swiper"
     >
-      {images.map((src,i) => (
+      {images.map((src, i) => (
         <SwiperSlide key={i}>
-          <img src={src} className="carousel__img" alt={`Slide ${i+1}`} />
+          <img src={src} alt={`Slide ${i+1}`} className="slider-image"/>
         </SwiperSlide>
       ))}
     </Swiper>
-  );
+  )
 }
 
 
