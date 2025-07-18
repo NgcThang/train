@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import TopHead from './components/TopHead';
-import Header  from './components/Header';
-import Footer  from './components/Footer';
+import TopHead       from './components/TopHead';
+import Header        from './components/Header';
+import Footer        from './components/Footer';
 
 import HomePage      from './pages/HomePage';
 import AboutPage     from './pages/AboutPage';
@@ -22,17 +22,14 @@ export default function App() {
 
       <main>
         <Routes>
-          {/* Route gốc trỏ về HomePage */}
-          <Route path="/" element={<HomePage />} />
-
-          {/* Các route khác */}
-          <Route path="/about"          element={<AboutPage />} />
-          <Route path="/services"       element={<ServicesPage />} />
-          <Route path="/products"       element={<ProductsPage />} />
-          <Route path="/products/:slug" element={<ProductDetail />} />
-          <Route path="/news"           element={<NewsPage />} />
-          <Route path="/news/:slug"     element={<PostDetail />} />
-          <Route path="/contact"        element={<ContactPage />} />
+          <Route path="/"              element={<HomePage />} />
+          <Route path="/about"         element={<AboutPage />} />
+          <Route path="/services"      element={<ServicesPage />} />
+          <Route path="/products"      element={<ProductsPage />} />
+          <Route path="/products/:slug"element={<ProductDetail />} />
+          <Route path="/news"          element={<NewsPage />} />
+          <Route path="/news/:slug"    element={<PostDetail />} />
+          <Route path="/contact"       element={<ContactPage />} />
         </Routes>
       </main>
 

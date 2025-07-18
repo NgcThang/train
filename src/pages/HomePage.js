@@ -4,15 +4,14 @@ import Section from '../components/Section';
 import Slider  from '../components/Slider';
 import '../styles/components/hero.css';
 
-import carousel1 from '../assets/images/carousel1.jpg';
-import carousel2 from '../assets/images/carousel2.jpg';
-import carousel3 from '../assets/images/carousel3.jpg';
-import carousel4 from '../assets/images/carousel4.jpg';
+import c1 from '../assets/images/carousel1.jpg';
+import c2 from '../assets/images/carousel2.jpg';
+import c3 from '../assets/images/carousel3.jpg';
+import c4 from '../assets/images/carousel4.jpg';
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero banner */}
       <Hero
         title="The Incredible 90-YEAR JOURNEY"
         subtitle="Apparel Manufacturing Excellence Since 1930"
@@ -20,12 +19,11 @@ export default function HomePage() {
         buttonLink="#about"
       />
 
-      {/* Carousel 4 ảnh */}
       <Section id="carousel">
-        <Slider images={[carousel1, carousel2, carousel3, carousel4]} />
+        <Slider images={[c1,c2,c3,c4]} />
       </Section>
 
-      {/* Phần About, Capabilities, Stats, CTA… */}
+      {/* Các section tiếp theo (About / Capabilities / Stats / CTA) */}
       <Section id="about">
         <div className="about-content">
           <h2>Over 90 Years of Heritage & Innovation</h2>
