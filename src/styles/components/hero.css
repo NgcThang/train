@@ -1,39 +1,52 @@
 .hero-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* chỉ định khoảng cách ngang giữa image và text */
+  gap: 2rem;
+  /* padding trên/dưới 4rem, trái/phải 2rem như Thygesen */
   padding: 4rem 2rem;
+  /* nếu bạn muốn background trắng, thêm dòng này */
+  background-color: #fff;
 }
+
+.hero-image,
 .hero-content {
   flex: 1;
-  max-width: 50%;
+  /* giới hạn mỗi phần không quá 600px */
+  max-width: 600px;
 }
+
+/* Bên text */
 .hero-content h1 {
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: #222;
 }
 .hero-content p {
   font-size: 1rem;
-  color: #555;
+  color: #444;
+  line-height: 1.6;
 }
-.hero-image {
-  flex: 1;
-  max-width: 50%;
-}
+
+/* Bên ảnh */
 .hero-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
-/* Responsive */
+/* Responsive: stack cột khi màn hình nhỏ */
 @media (max-width: 768px) {
   .hero-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
   }
-  .hero-content, .hero-image {
+  .hero-image,
+  .hero-content {
     max-width: 100%;
   }
   .hero-content h1 {
