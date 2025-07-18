@@ -22,14 +22,17 @@ export default function App() {
 
       <main>
         <Routes>
+          {/* Route gốc trỏ về HomePage */}
           <Route path="/" element={<HomePage />} />
-          <Route path="/about"         element={<AboutPage />} />
-          <Route path="/services"      element={<ServicesPage />} />
-          <Route path="/products"      element={<ProductsPage />} />
-          <Route path="/products/:slug"element={<ProductDetail />} />
-          <Route path="/news"          element={<NewsPage />} />
-          <Route path="/news/:slug"    element={<PostDetail />} />
-          <Route path="/contact"       element={<ContactPage />} />
+
+          {/* Các route khác */}
+          <Route path="/about"          element={<AboutPage />} />
+          <Route path="/services"       element={<ServicesPage />} />
+          <Route path="/products"       element={<ProductsPage />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/news"           element={<NewsPage />} />
+          <Route path="/news/:slug"     element={<PostDetail />} />
+          <Route path="/contact"        element={<ContactPage />} />
         </Routes>
       </main>
 
