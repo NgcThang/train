@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/Section.css'; // styles/components/section.css
+import '../styles/components/section.css'; // styles/components/section.css
 
 export default function Section({ id, children }) {
   return (
