@@ -1,10 +1,6 @@
-.swiper {
-  padding: 2rem 5%;
-}
-
 .carousel__img {
   width: 100%;
-  aspect-ratio: 16/9;       /* hoặc 4/3 tuỳ bạn */
+  aspect-ratio: 16/9;      /* ép tất cả ảnh cùng ratio 16:9 */
   object-fit: cover;
   border-radius: 8px;
 }

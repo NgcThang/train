@@ -6,14 +6,12 @@ import '../styles/components/section.css';
 export default function HomePage() {
   return (
     <main>
-      {/* Hero section */}
+      <Slider />
+
       <Hero
         title="Over 90 Years of Experience in the Textile Industry"
         subtitle="In 1931, Carla Søren Thygesen began a journey that would link the name Thygesen Textile Group (Denmark) with quality in designing, manufacturing and selling textile products."
       />
-
-      {/* Carousel */}
-      <Slider />
 
       {/* Mission / Vision / Core Values */}
       <section className="values">
