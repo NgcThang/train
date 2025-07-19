@@ -171,7 +171,7 @@ export default function HomePage() {
       </div>
 
       {/* Our capabilities */}
-      <div className="capability-section">
+      <section className="capability-section">
         {/* Header trên nền xanh full-bleed */}
         <div className="capability-header">
           <span className="capability-divider" />
@@ -187,8 +187,8 @@ export default function HomePage() {
         {/* Cards trên nền trắng, overlap header */}
         <div className="capability-cards-section">
           <div className="capability-cards">
-            {capabilities.map((c, i) => (
-              <div className="capability-card" key={i}>
+            {capabilities.map((c) => (
+              <div className="capability-card" key={c.title}>
                 <img src={c.img} alt={c.title} />
                 <div className="capability-card-content">
                   <h3 className="capability-card-title">{c.title}</h3>
@@ -199,11 +199,12 @@ export default function HomePage() {
           </div>
         </div>
 
+
         {/* Highlight image full-bleed */}
         <div className="capability-highlight">
-          <img src={capabilityHighlight} alt="Năng lực nổi bật" />
+          <img src={capabilityHighlight} alt="Capability highlight" />
         </div>
-      </div>
+      </section>
     </>
   )
 }

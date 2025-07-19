@@ -1,6 +1,13 @@
-/* capability.css */
+/* === 0. Override overflow on any ancestor that may hide the overlap === */
+.container.values-section,
+.values-section,
+.capability-section,
+.capability-section * {
+  overflow: visible !important;
+}
 
-/* === Bao ngoài full-bleed === */
+
+/* === 1. Full-bleed wrapper === */
 .capability-section {
   position: relative;
   left: 50%;
@@ -8,15 +15,16 @@
   margin-left: -50vw;
   margin-right: -50vw;
   width: 100vw;
-  overflow: hidden;
+  overflow: visible; /* ensure overlap is shown */
 }
 
-/* === Header (xanh full-bleed) === */
+
+/* === 2. Header (blue full-bleed) === */
 .capability-header {
   background-color: #1a2644;
   color: #fff;
   text-align: center;
-  padding: 4rem 1rem 22rem;
+  padding: 4rem 1rem 20rem; /* extended bottom padding for deeper blue */
 }
 .capability-divider {
   display: block;
@@ -37,14 +45,16 @@
   line-height: 1.6;
 }
 
-/* === Cards trên nền trắng, đè lên header === */
+
+/* === 3. Cards overlapping header === */
 .capability-cards-section {
   position: relative;
-  margin-top: -18rem;           /* đẩy cards overlap sâu hơn (trước là -4rem) */
+  margin-top: -10rem;    /* pull cards up into the blue */
   z-index: 1;
-  background-color: #fff;
-  padding: -5rem 1rem 3rem;    /* padding-top tương ứng để dành chỗ trắng */
+  background: transparent;
+  padding: 0 1rem 3rem;  /* adjust padding bottom for white area */
 }
+
 
 .capability-cards {
   display: grid;
@@ -77,7 +87,8 @@
   line-height: 1.5;
 }
 
-/* === Highlight image full-bleed === */
+
+/* === 4. Highlight image full-bleed === */
 .capability-highlight {
   position: relative;
   left: 50%;
@@ -93,10 +104,11 @@
   height: auto;
 }
 
-/* === Responsive tweaks === */
+
+/* === 5. Responsive tweaks === */
 @media (max-width: 768px) {
   .capability-header {
-    padding-bottom: 6rem;      /* mobile: nén bớt padding */
+    padding-bottom: 6rem;    /* mobile: less bottom padding */
   }
   .capability-divider {
     width: 30px;
@@ -107,7 +119,10 @@
     font-size: 2rem;
   }
   .capability-cards-section {
-    margin-top: -6rem;        
-    padding-top: 9rem;
+    margin-top: -6rem;
+    padding-top: 9rem;       /* preserve white space for cards */
   }
 }
+
+
+
