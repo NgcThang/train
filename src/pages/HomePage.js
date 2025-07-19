@@ -4,9 +4,15 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Slider from '../components/Slider'
 import Section from '../components/Section'
+import Certifications from '../components/Certifications'
+import Customers from '../components/Customers'
+import ProcessSetup from '../components/ProcessSetup'
+import Reviews from '../components/Reviews'
+
 import { Link } from 'react-router-dom';
 import '../styles/components/products.css'
 import '../styles/components/capability.css'
+import '../styles/components/machine-list.css'
 
 
 // import ảnh hero & carousel
@@ -30,6 +36,7 @@ import capable2 from '../assets/images/capable2.jpg'
 import capable3 from '../assets/images/capable3.jpg'
 import capable4 from '../assets/images/capable4.jpg'
 import capabilityHighlight from '../assets/images/capability.jpg'
+import machineListImg from '../assets/images/machine_list.jpg'
 
 
 export default function HomePage() {
@@ -205,6 +212,31 @@ export default function HomePage() {
           <img src={capabilityHighlight} alt="Capability highlight" />
         </div>
       </section>
+
+      {/* Machine List Section */}
+      <section className="machine-list-section">
+        <span className="machine-list-divider" />
+        <h2 className="machine-list-title">Our Advanced Machine List</h2>
+        <p className="machine-list-subtitle">
+          Our factory is equipped with advanced machinery and modern technology, enabling
+          efficient operations and maintaining high-quality, consistent products for bulk production.
+        </p>
+        <div className="machine-list-image">
+          <img src={machineListImg} alt="Machine List" />
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <Certifications />
+
+      {/* Customers Section */}
+      <Customers />
+
+      {/* Process Setup Section */}
+      <ProcessSetup />
+
+      {/* Reviews Section */}
+      <Reviews />
     </>
   )
 }

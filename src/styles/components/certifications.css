@@ -1,0 +1,83 @@
+/* certifications.css */
+
+
+/* 1. Section wrapper */
+.certifications-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  overflow: visible;
+}
+
+
+/* 2. Divider */
+.certifications-divider {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #7a6c9d;
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+
+/* 3. Title */
+.certifications-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+
+/* 4. Grid: desktop 4 cột, 2 hàng */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+
+/* 5. Item styling */
+.certification-item {
+  text-decoration: none;
+  color: inherit;
+}
+.certification-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.certification-item-title {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+/* 6. Mobile: 2 cột, 4 hàng */
+@media (max-width: 768px) {
+  .certifications-section {
+    padding: 2.5rem 1rem;
+  }
+  .certifications-title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .certification-item img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+
+

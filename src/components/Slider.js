@@ -34,6 +34,3 @@ export default function Slider({ images = [], interval = 5000 }) {
     </div>
   )
 }
-
-
-

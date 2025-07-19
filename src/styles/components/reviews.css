@@ -1,0 +1,148 @@
+.reviews-section {
+  padding: 4rem 1rem;
+  background-color: #f9f3e7;
+  text-align: center;
+  overflow: visible;
+}
+
+
+.reviews-divider {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #7a6c9d;
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+
+.reviews-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+
+/* (3) allow wrapper & inner wrapper overflow */
+.reviews-section .swiper,
+.reviews-section .swiper-wrapper {
+  overflow: visible;
+  padding-bottom: 3rem; /* (5) thêm khoảng cách để pagination lơ lửng */
+}
+
+
+/* (1) auto width slide, giới hạn max-width */
+.swiper-slide {
+  width: auto !important;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  opacity: 0; 
+  visibility: hidden;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+
+/* (2) chỉ scale/opacity cho prev & next */
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.5;
+  visibility: visible;
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+
+/* active slide nổi bật */
+.swiper-slide-active {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: scale(1) !important;
+  z-index: 2;
+}
+
+
+.review-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+.review-card-title {
+  font-size: 1.4rem; /* to hơn một chút */
+  margin-bottom: 1rem;
+  color: #222;
+}
+.review-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+.review-card-author {
+  font-size: 1rem;
+  font-style: italic;
+  color: #7a6c9d;
+}
+
+
+/* pagination dots */
+.reviews-section .swiper-pagination {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* (5) đẩy pagination thấp hơn */
+  position: relative;
+}
+.reviews-section .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  opacity: 1;
+}
+.reviews-section .swiper-pagination-bullet-active {
+  background: #7a6c9d;
+}
+
+
+/* responsive: mobile chỉ 1 slide, không center prev/next */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 2.5rem 1rem;
+  }
+  .reviews-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .swiper-slide,
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    max-width: none;
+  }
+  .swiper-slide {
+    width: 100% !important;
+  }
+  .review-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .review-card-title {
+    font-size: 1.15rem;
+  }
+  .review-card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .review-card-author {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
