@@ -1,33 +1,69 @@
 /* src/styles/components/section.css */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+
+/* 1. Section chung */
+.section {
+  padding: 4rem 0;
+  background: #f9f9f9;
+  text-align: center; /* bạn có thể bỏ nếu không muốn text căn giữa toàn bộ */
 }
 
-.values-section {
+/* 2. Wrapper chứa các card */
+.section-cards {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: stretch;
+  /* để đảm bảo mỗi card chiếm đều không gian */
 }
-.values-section .card {
+
+/* 3. Mỗi card */
+.section-cards .card {
   flex: 1;
-  min-width: 250px;
   background: #fff;
-  border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.values-section .card h3 {
-  margin-bottom: 0.5rem;
-  display: inline-block;
-  border-bottom: 3px solid #7c4dff;
+
+/* Tiêu đề & nội dung */
+.section-cards .card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #00274d;
 }
-.values-section .card p {
-  margin-top: 0.75rem;
+.section-cards .card p {
+  flex: 1;
+  margin: 1rem 0 0;
   line-height: 1.6;
 }
 
 
+/* Tablet: 2 cards 1 hàng */
+@media (max-width: 992px) {
+  .section-cards {
+    flex-wrap: wrap;
+  }
+  .section-cards .card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
 
+/* Mobile: 1 card 1 hàng */
+@media (max-width: 600px) {
+  .section-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+  .section-cards .card {
+    padding: 1rem;
+  }
+  .section-cards .card h3 {
+    font-size: 1.25rem;
+  }
+}

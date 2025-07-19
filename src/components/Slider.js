@@ -5,26 +5,28 @@ import { Navigation, Pagination, A11y } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import '../styles/components/slider.css'    // path tuỳ theo bạn đặt
+import '../styles/components/slider.css'  
 
 export default function Slider({ images = [], interval = 5000 }) {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, A11y]}
-      slidesPerView={1}
-      loop={true}
-      navigation={true}
-      pagination={{ clickable: true }}
-      grabCursor={true}
-      autoplay={{ delay: interval, disableOnInteraction: false }}
-      className="mySwiper"
-    >
-      {images.map((src, idx) => (
-        <SwiperSlide key={idx}>
-          <img src={src} alt={`Slide ${idx+1}`} className="slide-image" />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="slider-fullwidth">
+      <Swiper
+        modules={[Navigation, Pagination, A11y]}
+        slidesPerView={1}
+        loop
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: interval, disableOnInteraction: false }}
+        grabCursor
+        className="mySwiper"
+      >
+        {images.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <img src={src} alt={`slide-${idx}`} className="slide-image" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   )
 }
 

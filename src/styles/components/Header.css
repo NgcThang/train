@@ -1,9 +1,12 @@
+
+/* 1. Container chung */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; 
+  padding: 0 20px;
 }
 
+/* 2. Header chính */
 .site-header {
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -12,25 +15,41 @@
   z-index: 1000;
 }
 
+/* 3. Container bên trong header */
 .site-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  height: 80px;                  
-  padding: 0;                    
+  justify-content: space-between;
+  height: 80px;
+  padding: 0;
 }
 
+/* 4. Logo */
 .site-logo {
-  width: 320px; 
-  height: 60px; 
+  width: 320px;
+  height: 60px;
   object-fit: contain;
-  margin: 0;    
+  margin: 0;
 }
 
+/* 5. Hamburger icon (ẩn trên desktop) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: all .3s;
+}
+
+/* 6. Navigation chính */
 .nav {
-  margin-left: auto;           
+  margin-left: auto;
 }
-
 .nav ul {
   list-style: none;
   display: flex;
@@ -39,36 +58,31 @@
   margin: 0;
   padding: 0;
 }
-
 .nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color .2s;
 }
-
 .nav a:hover {
   color: #0070f3;
 }
 
+/* 7. Submenu */
 .menu-item {
   position: relative;
 }
-
 .menu-item > a::after {
   content: ' ▼';
   font-size: 0.6em;
   margin-left: 0.25em;
 }
-
 .nav ul .submenu {
   display: none;
 }
-
 .menu-item:hover > .submenu {
   display: block;
 }
-
 .submenu {
   position: absolute;
   top: 100%;
@@ -79,43 +93,54 @@
   white-space: nowrap;
   z-index: 1001;
 }
-
 .submenu li {
   padding: 0.5rem 1rem;
 }
-
 .submenu li a {
   color: #333;
 }
-
 .submenu li a:hover {
   color: #0070f3;
 }
 
+/* 8. Mobile responsive */
 @media (max-width: 768px) {
+  /* Stack header nội dung */
   .site-header .container {
     flex-direction: column;
     height: auto;
     padding: 10px 20px;
   }
 
-  .nav {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 10px;
+  /* Logo xuống dòng, cách riêng */
+  .site-logo {
+    margin-bottom: 10px;
   }
 
+  /* Hiện hamburger, ẩn nav mặc định */
+  .hamburger {
+    display: block;
+  }
+  .nav {
+    width: 100%;
+    display: none;
+    margin: 0;
+  }
+  /* Khi toggle hamburger, thêm class .open cho .nav để hiện menu */
+  .nav.open {
+    display: block;
+  }
+
+  /* Menu chuyển thành cột */
   .nav ul {
     flex-direction: column;
     gap: 1rem;
   }
 
+  /* Submenu chuyển thành block bình thường */
   .submenu {
     position: static;
     box-shadow: none;
     margin-top: 0;
   }
 }
-
-
-

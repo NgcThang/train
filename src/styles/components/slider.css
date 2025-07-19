@@ -1,59 +1,63 @@
-/* Container mặc định của Swiper */
+/* src/styles/components/slider.css */
+
+/* 1. Full‐width wrapper */
+.slider-fullwidth {
+  width: 100vw;               /* chiếm trọn khung nhìn */
+  position: relative;         
+  left: 50%;                  
+  margin-left: -50vw;         /* dịch ra sát mép viewport */
+  overflow: hidden;           /* ẩn phần tràn ra */
+  z-index: 0;                 /* đảm bảo không che mất button/pagination */
+  pointer-events: auto;       /* cho phép click */
+
+  /* Nếu bạn có padding/margin trên body/main, 
+     có thể phải reset margin-top: 0 và margin-bottom: 0 ở đây */
+}
+
+/* 2. Container Swiper */
 .mySwiper {
   width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  position: relative;
-}
-
-/* Ảnh mỗi slide */
-.slide-image {
-  display: block;
-  width: 100%;
   height: 500px;
+  position: relative;         /* đảm bảo các nút & bullets nằm đúng */
+  overflow: hidden;           /* cảnh báo: cần nếu có animation */
+}
+
+/* 3. Slide image */
+.mySwiper .slide-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
 }
 
-/* Arrow trái/phải */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #333;              
-  background: none;         
-  width: auto;
-  height: auto;
-  padding: 0.5rem;         
-  opacity: 0.8;
-  transition: opacity .2s;
+/* 4. Navigation arrows: độ ưu tiên cao hơn wrapper */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  z-index: 10;                /* đảm bảo nằm trên hình */
+  pointer-events: auto;       /* bật click */
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  opacity: 1;
+/* 5. Pagination bullets */
+.mySwiper .swiper-pagination {
+  z-index: 10;
+  pointer-events: auto;
+}
+.mySwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+}
+.mySwiper .swiper-pagination-bullet-active {
+  background: #fff
 }
 
-/* Pagination bullet */
-.swiper-pagination-bullet {
-  background: rgba(0,0,0,0.3);
-  width: 10px;
-  height: 10px;
-  opacity: 1;
+/* 6. Responsive height */
+@media (max-width: 992px) {
+  .mySwiper { height: 350px; }
 }
-.swiper-pagination-bullet-active {
-  background: #333;
+@media (max-width: 600px) {
+  .mySwiper { height: 250px; }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .slide-image {
-    height: 250px;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 2rem;
-    height: 2rem;
-  }
+@media (max-width: 400px) {
+  .mySwiper { height: 200px; }
 }
-
-
-
