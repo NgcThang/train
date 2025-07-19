@@ -1,0 +1,113 @@
+/* capability.css */
+
+/* === Bao ngoài full-bleed === */
+.capability-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* === Header (xanh full-bleed) === */
+.capability-header {
+  background-color: #1a2644;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem 22rem;
+}
+.capability-divider {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #FFD66B;
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+.capability-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #FFD66B;
+}
+.capability-subtitle {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === Cards trên nền trắng, đè lên header === */
+.capability-cards-section {
+  position: relative;
+  margin-top: -18rem;           /* đẩy cards overlap sâu hơn (trước là -4rem) */
+  z-index: 1;
+  background-color: #fff;
+  padding: -5rem 1rem 3rem;    /* padding-top tương ứng để dành chỗ trắng */
+}
+
+.capability-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.capability-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.capability-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.capability-card-content {
+  padding: 1.25rem;
+}
+.capability-card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+.capability-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === Highlight image full-bleed === */
+.capability-highlight {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #1a2644;
+}
+.capability-highlight img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 768px) {
+  .capability-header {
+    padding-bottom: 6rem;      /* mobile: nén bớt padding */
+  }
+  .capability-divider {
+    width: 30px;
+    height: 3px;
+    margin-bottom: 12px;
+  }
+  .capability-title {
+    font-size: 2rem;
+  }
+  .capability-cards-section {
+    margin-top: -6rem;        
+    padding-top: 9rem;
+  }
+}

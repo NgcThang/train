@@ -6,6 +6,8 @@ import Slider from '../components/Slider'
 import Section from '../components/Section'
 import { Link } from 'react-router-dom';
 import '../styles/components/products.css'
+import '../styles/components/capability.css'
+
 
 // import ảnh hero & carousel
 import heroBg from '../assets/images/hero-bg.jpg'
@@ -21,6 +23,14 @@ import aopolo from '../assets/images/products/aopolo.jpg'
 import aokhoac from '../assets/images/products/aokhoac.jpg'
 import quanjeans from '../assets/images/products/quanjeans.jpg'
 import quancongso from '../assets/images/products/quancongso.jpg'
+
+// import ảnh Our capabilities
+import capable1 from '../assets/images/capable1.jpg'
+import capable2 from '../assets/images/capable2.jpg'
+import capable3 from '../assets/images/capable3.jpg'
+import capable4 from '../assets/images/capable4.jpg'
+import capabilityHighlight from '../assets/images/capability.jpg'
+
 
 export default function HomePage() {
   const images = [carousel1, carousel2, carousel3, carousel4]
@@ -61,6 +71,29 @@ export default function HomePage() {
       img: quancongso,
       slug: 'workpants',
       desc: 'Quần công sở mang đến vẻ ngoài chuyên nghiệp, lịch sự và thoải mái cho người mặc, phù hợp với môi trường làm việc và các buổi gặp gỡ quan trọng.'
+    }
+  ]
+
+  const capabilities = [
+    {
+      img: capable1,
+      title: 'Continuous Efforts for R&D',
+      desc: `Our development team studies your specifications to design readily practical tools, methods and work instructions, which in combination with the deployment of today’s technology, ensure timely production and consistent quality standards.`
+    },
+    {
+      img: capable2,
+      title: 'LEAN Manufacturing System',
+      desc: `Being one of the sustainable clothing manufacturers in Vietnam, we prioritize sustainability and responsibility in our manufacturing processes. By applying the LEAN system, we minimize waste at every step and optimize lead time.`
+    },
+    {
+      img: capable3,
+      title: 'OEM/ODM Manufacturing',
+      desc: `We specialize in OEM/ODM manufacturing. Our skillful employees and high-technology machine system allow us to manage the entire process from development to delivery with precision and efficiency.`
+    },
+    {
+      img: capable4,
+      title: 'Certified Fabrics',
+      desc: `Based on customer’s requirements, we have the capability to source high-quality, sustainable materials, certified by GOTS, OCS, FSC, GRS, and OEKO-TEX® Standard 100 through our reliable supplier network in Vietnam and globally.`
     }
   ]
 
@@ -134,6 +167,41 @@ export default function HomePage() {
               <Link to={`/products/${p.slug}`} className="btn">Xem thêm</Link>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Our capabilities */}
+      <div className="capability-section">
+        {/* Header trên nền xanh full-bleed */}
+        <div className="capability-header">
+          <span className="capability-divider" />
+          <h2 className="capability-title">Năng lực của chúng tôi</h2>
+          <p className="capability-subtitle">
+            With over 90 years of experience in textile industry, we support many global
+            fashion brands in bringing their designs to life through full-package OEM/ODM
+            solutions, innovative product development consulting, sustainable and efficient
+            manufacturing.
+          </p>
+        </div>
+
+        {/* Cards trên nền trắng, overlap header */}
+        <div className="capability-cards-section">
+          <div className="capability-cards">
+            {capabilities.map((c, i) => (
+              <div className="capability-card" key={i}>
+                <img src={c.img} alt={c.title} />
+                <div className="capability-card-content">
+                  <h3 className="capability-card-title">{c.title}</h3>
+                  <p className="capability-card-desc">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Highlight image full-bleed */}
+        <div className="capability-highlight">
+          <img src={capabilityHighlight} alt="Năng lực nổi bật" />
         </div>
       </div>
     </>
