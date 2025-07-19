@@ -4,6 +4,7 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Slider from '../components/Slider'
 import Section from '../components/Section'
+import { Link } from 'react-router-dom';
 import '../styles/components/products.css'
 
 // import ảnh hero & carousel
@@ -28,31 +29,37 @@ export default function HomePage() {
     {
       title: 'Áo thun',
       img: aothun,
+      slug: 'tshirt',
       desc: 'Áo thun là trang phục cơ bản nhưng không thể thiếu trong tủ đồ của mọi người, mang lại sự thoải mái và linh hoạt cho người mặc trong mọi hoạt động hàng ngày.'
     },
     {
       title: 'Áo thể thao',
       img: aothethao,
+      slug: 'activewear',
       desc: 'Áo thể thao được thiết kế đặc biệt để hỗ trợ vận động, giúp người mặc cảm thấy thoải mái và tự tin trong các hoạt động thể thao, từ tập gym đến chạy bộ.'
     },
     {
       title: 'Áo polo',
       img: aopolo,
+      slug: 'poloshirt',
       desc: 'Áo polo là sự kết hợp hoàn hảo giữa sự thanh lịch và tiện dụng, phù hợp cho cả môi trường công sở lẫn các buổi dã ngoại hay thể thao nhẹ nhàng.'
     },
     {
       title: 'Áo khoác',
       img: aokhoac,
+      slug: 'jacket',
       desc: 'Áo khoác là lựa chọn lý tưởng cho những ngày hè nhiều gió, mang lại sự thoải mái tối đa và dễ dàng phối đồ với nhiều phong cách khác nhau.'
     },
     {
       title: 'Quần jeans',
       img: quanjeans,
+      slug: 'jeans',
       desc: 'Quần jeans là item không bao giờ lỗi mốt, có thể mặc trong nhiều hoàn cảnh và dễ dàng kết hợp với các loại áo khác nhau để tạo nên phong cách riêng.'
     },
     {
       title: 'Quần công sở',
       img: quancongso,
+      slug: 'workpants',
       desc: 'Quần công sở mang đến vẻ ngoài chuyên nghiệp, lịch sự và thoải mái cho người mặc, phù hợp với môi trường làm việc và các buổi gặp gỡ quan trọng.'
     }
   ]
@@ -98,21 +105,33 @@ export default function HomePage() {
 
       {/* Product Lines */}
       <div className="container products-section">
+      <span
+          style={{
+            display: 'block',
+            width: '40px',
+            height: '3px',
+            backgroundColor: '#a09eb0ff', 
+            margin: '0 auto 12px',
+            borderRadius: '2px',
+          }}
+        />
         <h2 className="products-title">Product Lines</h2>
         <p className="products-subtitle">
-          We specialize in manufacturing activewear, casualwear, kidswear, underwear, etc.&nbsp;
-          offering high-quality apparel to best suit your demands.<br/>
-          Every garment is made with care, in our own SA8000 and WRAP certified sewing factory.
+         We specialize in manufacturing activewear, casualwear, kidswear, underwear, etc.&nbsp;
+         offering high-quality apparel to best suit your demands.<br/>
+         Every garment is made with care, in our own SA8000 and WRAP certified sewing factory.
          </p>
         <div className="product-cards">
           {products.map((p, idx) => (
             <div className="product-card" key={idx}>
-              <img src={p.img} alt={p.title} />
-              <div className="overlay"><p>{p.desc}</p></div>
-              <div className="info">
-                <h4>{p.title}</h4>
-                <button className="btn">Discover</button>
+              <div className="image-wrapper">
+                <img src={p.img} alt={p.title} />
+                <div className="overlay">
+                  <p>{p.desc}</p>
+                </div>
               </div>
+              <h4 className="product-title">{p.title}</h4>
+              <Link to={`/products/${p.slug}`} className="btn">Xem thêm</Link>
             </div>
           ))}
         </div>

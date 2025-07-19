@@ -16,9 +16,12 @@ export default function Header() {
             <li className="menu-item">
               <Link to="/products">Sản phẩm</Link>
               <ul className="submenu">
-                <li><Link to="/products/activewear">Activewear</Link></li>
-                <li><Link to="/products/casualwear">Casualwear</Link></li>
-                <li><Link to="/products/kidswear">Kidswear</Link></li>
+                <li><Link to="/products/tshirt">Áo thun</Link></li>
+                <li><Link to="/products/activewear">Áo thể thao</Link></li>
+                <li><Link to="/products/poloshirt">Áo polo</Link></li>
+                <li><Link to="/products/jacket">Áo khoác</Link></li>
+                <li><Link to="/products/jeans">Quần jeans</Link></li>
+                <li><Link to="/products/workpants">Quần công sở</Link></li>
               </ul>
             </li>
             <li><Link to="/about">Về chúng tôi</Link></li>

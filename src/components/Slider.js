@@ -11,13 +11,18 @@ export default function Slider({ images = [], interval = 5000 }) {
   return (
     <div className="slider-fullwidth">
       <Swiper
+        // register the modules you want to use:
         modules={[Navigation, Pagination, A11y]}
+        
         slidesPerView={1}
-        loop
+        loop={true}
+        
+        // these props now hook into the registered modules:
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: interval, disableOnInteraction: false }}
         grabCursor
+        
         className="mySwiper"
       >
         {images.map((src, idx) => (

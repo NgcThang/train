@@ -1,16 +1,14 @@
-/* src/styles/components/products.css */
-
 /* 1. Section riêng cho Product Lines */
 .products-section {
   padding: 4rem 0;
   background: #f9f9f9;
 }
 
-/* 2. Tiêu đề và subtitle */
+/* 2. Tiêu đề & subtitle */
 .products-section .products-title {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 .products-section .products-subtitle {
   text-align: center;
@@ -27,11 +25,12 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 /* 4. Mỗi card */
 .products-section .product-card {
+  position: relative;            /* để overlay chỉ phủ trong card */
   flex: 0 0 calc(33.333% - 1.333rem);
   background: #fff;
   border-radius: 8px;
@@ -45,15 +44,21 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* 5. Hình ảnh consistent ratio 4:3 */
-.products-section .product-card img {
+/* 5. Wrapper ảnh và tỉ lệ cố định 4:3 */
+.products-section .product-card .image-wrapper {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.products-section .product-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* 6. Overlay khi hover */
+/* 6. Overlay chỉ hiện khi hover lên ảnh */
 .products-section .product-card .overlay {
   position: absolute;
   top: 0; left: 0;
@@ -61,30 +66,30 @@
   background: rgba(0,0,0,0.6);
   color: #fff;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  pointer-events: none;          /* cho phép click xuyên qua khi ẩn */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
   text-align: center;
+  padding: 1.5rem;
   font-size: 0.95rem;
+  transition: opacity 0.3s ease;
 }
-.products-section .product-card:hover .overlay {
+.products-section .product-card .image-wrapper:hover .overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* 7. Phần thông tin dưới ảnh */
-.products-section .product-card .info {
-  padding: 1rem;
-  text-align: center;
-  margin-top: auto;
-}
-.products-section .product-card .info h4 {
-  margin: 0 0 0.75rem;
+/* 7. Title và button nằm riêng bên ngoài ảnh */
+.products-section .product-card .product-title {
+  margin: 1rem 0 0.5rem;
   font-size: 1.25rem;
   color: #00274d;
+  text-align: center;
 }
-.products-section .product-card .info .btn {
+.products-section .product-card .btn {
+  margin: 0 0 1rem;
+  align-self: center;
   padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
 }
