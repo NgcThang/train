@@ -10,7 +10,7 @@
 .machine-list-divider {
   display: block;
   width: 40px;
-  height: 4px;
+  height: 1px;
   background-color: #7A6C9D;   /* hoặc màu bạn muốn */
   margin: 0 auto 16px;
   border-radius: 2px;

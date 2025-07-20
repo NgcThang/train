@@ -1,8 +1,7 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import '../styles/components/reviews.css'
 
 
@@ -51,47 +50,57 @@ const reviews = [
   },
 ]
 
-
 export default function Reviews() {
+  const settings = {
+    infinite: true,
+    centerMode: true,
+    centerPadding: '0px',   // không thừa khoảng, chỉ 3 slide visible
+    slidesToShow: 3,        // desktop: 3 slide
+    initialSlide: 2,        // default slide thứ 3
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,   // mobile: 1 slide full-width
+          centerMode: false, // tắt peek 2 bên
+        },
+      },
+    ],
+    customPaging: i => <button />,
+  }
+
+
   return (
     <section className="reviews-section">
-      <span className="reviews-divider" />
+      <span
+          style={{
+            display: 'block',
+            width: '40px',
+            height: '1px',
+            backgroundColor: '#3526aaff', 
+            margin: '0 auto 12px',
+            borderRadius: '2px',
+          }}
+        />
       <h2 className="reviews-title">Our Clients Say</h2>
-
-
-      <Swiper
-        modules={[Pagination]}
-        loop={true}
-        loopedSlides={reviews.length}
-        pagination={{ clickable: true }}
-        initialSlide={2}
-        slidesPerView={'auto'}          
-        centeredSlides={true}
-        spaceBetween={50}               
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-            centeredSlides: false,
-          },
-          768: {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-          },
-        }}
-      >
-        {reviews.map((r, idx) => (
-          <SwiperSlide key={idx}>
+      <Slider {...settings} className="reviews-slider">
+        {reviews.map((r, i) => (
+          <div key={i}>
             <div className="review-card">
               <h3 className="review-card-title">{r.title}</h3>
               <p className="review-card-text">{r.text}</p>
               <p className="review-card-author">{r.author}</p>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </Slider>
     </section>
   )
 }
+
+
 
 
 

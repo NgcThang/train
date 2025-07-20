@@ -149,7 +149,7 @@ export default function HomePage() {
           style={{
             display: 'block',
             width: '40px',
-            height: '3px',
+            height: '1px',
             backgroundColor: '#a09eb0ff', 
             margin: '0 auto 12px',
             borderRadius: '2px',
@@ -237,6 +237,8 @@ export default function HomePage() {
 
       {/* Reviews Section */}
       <Reviews />
+
+      
     </>
   )
 }

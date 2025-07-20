@@ -1,0 +1,108 @@
+.site-footer {
+  background-color: #1a2644;
+  color: #fff;
+  padding: 4rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+/* Logo + Contact */
+.about-col .footer-logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+.footer-company {
+  margin: 0.5rem 0;
+}
+.footer-slogan {
+  line-height: 1.6;
+  max-width: 280px;
+  margin-bottom: 1rem;
+}
+.footer-contact p {
+  margin: 0.3rem 0;
+}
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-social {
+  margin-top: 1rem;
+}
+.footer-social a {
+  margin-right: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-social a:hover {
+  color: #FFD66B;
+}
+
+/* Links columns */
+.links-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #FFD66B;
+}
+.links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.links-col ul li {
+  margin-bottom: 0.75rem;
+}
+.links-col a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.links-col a:hover {
+  color: #FFD66B;
+}
+
+/* Certifications: hiển thị duy nhất 1 ảnh */
+.cert-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #FFD66B;
+}
+.footer-certs {
+  text-align: center;
+}
+.footer-certs img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ẩn overflow nếu có */
+.site-footer .footer-container {
+  overflow: hidden;
+}
+
+/* Responsive: stack columns */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+  .footer-certs {
+    margin-top: 1rem;
+  }
+}
+
+
+
