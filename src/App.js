@@ -16,6 +16,8 @@ import ContactPage   from './pages/ContactPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import SustainabilityPage from './pages/SustainabilityPage';
 
+import ProductTshirt from './pages/ProductTshirt';
+
 export default function App() {
   return (
     <>
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="/contact"        element={<ContactPage />} />
           <Route path="/capabilities"   element={<CapabilitiesPage />} />
           <Route path="/sustainability" element={<SustainabilityPage />} />
+          <Route path="/products/tshirt" element={<ProductTshirt />} />
+
         </Routes>
       </main>
 

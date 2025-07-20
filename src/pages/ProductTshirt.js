@@ -1,17 +1,16 @@
+// src/pages/ProductTshirt.js
 import React from 'react';
 import '../styles/pages/product-tshirt.css';
 
-import tshirtHero from '../assets/images/products/details/tshirt-hero.jpg';
-import tshirtRange1 from '../assets/images/products/details/tshirt-range-1.jpg';
-import tshirtRange2 from '../assets/images/products/details/tshirt-range-2.jpg';
-import tshirtFair1 from '../assets/images/products/details/tshirt-fairtrade-1.jpg';
-import tshirtFair2 from '../assets/images/products/details/tshirt-fairtrade-2.jpg';
+import tshirtHero    from '../assets/images/products/details/tshirt-hero.jpg';
+import tshirtRange1  from '../assets/images/products/details/tshirt-range-1.jpg';
+import tshirtRange2  from '../assets/images/products/details/tshirt-range-2.jpg';
+import tshirtFair1   from '../assets/images/products/details/tshirt-fairtrade-1.jpg';
+import tshirtFair2   from '../assets/images/products/details/tshirt-fairtrade-2.jpg';
 import tshirtPowerAll from '../assets/images/products/details/tshirt-power-all.jpg';
 import tshirtQuality from '../assets/images/products/details/tshirt-quality.jpg';
 
-import Certifications from '../components/Certifications';
-import Customers from '../components/Customers';
-import ProcessSetup from '../components/ProcessSetup';
+import Reviews      from '../components/Reviews';
 
 export default function ProductTshirt() {
   return (
@@ -70,23 +69,7 @@ export default function ProductTshirt() {
         <img src={tshirtQuality} alt="Quality Control Compliance" />
       </section>
 
-      {/* Certifications */}
-      <section className="tshirt-certs">
-        <h2>Our Certifications</h2>
-        <Certifications />
-      </section>
-
-      {/* Clients */}
-      <section className="tshirt-clients">
-        <h2>Our Clients Say</h2>
-        <Customers />
-      </section>
-
-      {/* Process */}
-      <section className="tshirt-process">
-        <h2>Our Process Setup is Optimized for Mass Production</h2>
-        <ProcessSetup />
-      </section>
+    <Reviews />
     </div>
   );
 }
