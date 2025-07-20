@@ -238,7 +238,16 @@ export default function HomePage() {
       {/* Reviews Section */}
       <Reviews />
 
-      
+      <span
+          style={{
+            display: 'block',
+            width: '40px',
+            height: '1px',
+            backgroundColor: '#a09eb0ff', 
+            margin: '2rem auto 12px',
+            borderRadius: '2px',
+          }}
+        />
     </>
   )
 }

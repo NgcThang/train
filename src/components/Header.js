@@ -14,7 +14,7 @@ export default function Header() {
           <ul>
             <li><Link to="/">Trang chủ</Link></li>
             <li className="menu-item">
-              <Link to="/products">Sản phẩm</Link>
+              <p>Sản phẩm</p>
               <ul className="submenu">
                 <li><Link to="/products/tshirt">Áo thun</Link></li>
                 <li><Link to="/products/activewear">Áo thể thao</Link></li>

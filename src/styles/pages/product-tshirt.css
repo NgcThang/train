@@ -1,0 +1,133 @@
+.tshirt-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: var(--font-body);
+  color: #333;
+}
+
+/* Hero */
+.tshirt-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.tshirt-hero img {
+  width: 50%;
+  border-radius: 8px;
+}
+.tshirt-hero-text {
+  width: 50%;
+}
+.tshirt-hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.tshirt-hero-text p {
+  line-height: 1.6;
+}
+
+/* Range section */
+.tshirt-range {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.tshirt-range h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.range-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.range-images img {
+  width: 45%;
+  border-radius: 8px;
+}
+.range-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Fairtrade */
+.tshirt-fairtrade {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.tshirt-fairtrade h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.fairtrade-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.fairtrade-images img {
+  width: 45%;
+  border-radius: 8px;
+}
+.fairtrade-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Power & Quality */
+.tshirt-power,
+.tshirt-quality {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.tshirt-power h2,
+.tshirt-quality h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.tshirt-power img,
+.tshirt-quality img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+}
+
+/* Certifications / Clients / Process */
+.tshirt-certs,
+.tshirt-clients,
+.tshirt-process {
+  margin-bottom: 4rem;
+}
+.tshirt-certs h2,
+.tshirt-clients h2,
+.tshirt-process h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tshirt-hero {
+    flex-direction: column;
+  }
+  .tshirt-hero img,
+  .tshirt-hero-text {
+    width: 100%;
+  }
+  .range-images,
+  .fairtrade-images {
+    flex-direction: column;
+  }
+  .range-images img,
+  .fairtrade-images img {
+    width: 100%;
+  }
+}
+
+
+

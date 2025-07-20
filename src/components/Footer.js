@@ -39,15 +39,16 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Services */}
+        {/* Products */}
         <div className="footer-col links-col">
-          <h4>Services</h4>
+          <h4>Products</h4>
           <ul>
-            <li><Link to="/services/activewear">Activewear Manufacturing</Link></li>
-            <li><Link to="/services/underwear">Underwear Manufacturing</Link></li>
-            <li><Link to="/services/fashionwear">Fashionwear Manufacturing</Link></li>
-            <li><Link to="/services/kidswear">Kidswear Manufacturing</Link></li>
-            <li><Link to="/services/workwear">Workwear Manufacturing</Link></li>
+            <li><Link to="/products/tshirt">Áo thun</Link></li>
+            <li><Link to="/products/activewear">Áo thể thao</Link></li>
+            <li><Link to="/products/poloshirt">Áo polo</Link></li>
+            <li><Link to="/products/jacket">Áo khoác</Link></li>
+            <li><Link to="/products/jeans">Quần jeans</Link></li>
+            <li><Link to="/products/workpants">Quần công sở</Link></li>
           </ul>
         </div>
 

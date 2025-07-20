@@ -1,0 +1,203 @@
+/* src/styles/pages/about.css */
+
+/* Reset cơ bản và chung */
+.about-page {
+  font-family: "Inter", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================
+   1. INTRO SECTION
+   ======================== */
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 60px 0;
+  gap: 40px;
+}
+.about-intro .intro-text {
+  flex: 1;
+}
+.about-intro .intro-text p {
+  margin-bottom: 1em;
+}
+.about-intro .intro-image {
+  flex: 1;
+  text-align: right;
+}
+.about-intro .intro-image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* ========================
+   2. QUICK-LINK CARDS
+   ======================== */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+.about-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.about-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.about-card p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #555;
+}
+.about-card button {
+  background: #f2d06e;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ========================
+   3. DETAIL SECTIONS
+   ======================== */
+.about-detail {
+  margin-bottom: 80px;
+}
+.about-detail h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  position: relative;
+}
+.about-detail .detail-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.about-detail.reverse .detail-content {
+  flex-direction: row-reverse;
+}
+.about-detail .detail-content .images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-detail .detail-content .images img {
+  width: 100%;
+  border-radius: 4px;
+}
+.about-detail .detail-content .text {
+  flex: 1;
+}
+.about-detail .detail-content .text p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ========================
+   4. CSR SUMMARY
+   ======================== */
+.about-detail .csr-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/* ========================
+   5. MISSION / VISION / CORE VALUES
+   ======================== */
+.about-corevalues {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.about-corevalues h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+.about-corevalues .corevalues-image {
+  margin-bottom: 32px;
+}
+.about-corevalues .corevalues-image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.about-corevalues .corevalues-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.about-corevalues .corevalues-list > div {
+  flex: 1;
+  text-align: left;
+}
+.about-corevalues .corevalues-list h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.about-corevalues .corevalues-list p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ========================
+   6. CERTIFICATIONS
+   ======================== */
+.about-certifications {
+  margin-bottom: 80px;
+  text-align: center;
+}
+.about-certifications h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 992px) {
+  .about-intro {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about-intro .intro-image {
+    text-align: center;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-detail .detail-content {
+    flex-direction: column;
+  }
+
+  .about-corevalues .corevalues-list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

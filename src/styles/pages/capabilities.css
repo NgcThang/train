@@ -1,0 +1,140 @@
+/* src/styles/pages/capabilities.css */
+
+/* Container */
+.capabilities-page {
+  color: #333;
+}
+
+/* === Header === */
+.capabilities-header {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.capabilities-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.capabilities-slogan {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #7a6c9d;
+}
+.capabilities-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === Stats full-bleed === */
+.capabilities-stats {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  overflow: hidden;
+}
+.capabilities-stats img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Strengths & Advantages === */
+.capabilities-strengths {
+  padding: 4rem 1rem;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+.capabilities-strengths h3 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #222;
+}
+
+.strengths-list {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.strengths-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.strengths-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.strengths-image {
+  flex: 1 1 50%;
+  padding: 0 1rem;
+}
+.strengths-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.strengths-content {
+  flex: 1 1 50%;
+  padding: 0 1rem;
+  text-align: left;
+}
+.strengths-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+  position: relative;
+}
+.strengths-content h4::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #FFD66B;
+  margin: 0.5rem 0 1.5rem 0;
+}
+.strengths-content p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* === Featured Customers === */
+.capabilities-customers {
+  padding: 4rem 1rem;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .capabilities-header h1 {
+    font-size: 2rem;
+  }
+  .capabilities-slogan {
+    font-size: 1.5rem;
+  }
+  .capabilities-strengths {
+    padding: 2.5rem 1rem;
+  }
+  .capabilities-strengths h3 {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .strengths-row,
+  .strengths-row.reverse {
+    flex-direction: column !important;
+  }
+  .strengths-image,
+  .strengths-content {
+    flex: 1 1 100%;
+    padding: 0.5rem 0;
+  }
+  .strengths-content h4 {
+    font-size: 1.25rem;
+  }
+}
+
+
+

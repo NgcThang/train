@@ -2,9 +2,14 @@
   background-color: #1a2644;
   color: #fff;
   padding: 4rem 1rem;
-  font-size: 0.95rem;
+  width: 100vw;           /* full-bleed */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  box-sizing: border-box;
 }
 
+/* Container trung tâm */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +18,7 @@
   gap: 2rem;
 }
 
+/* Mỗi cột */
 .footer-col {
   flex: 1 1 200px;
 }
@@ -73,7 +79,7 @@
   color: #FFD66B;
 }
 
-/* Certifications: hiển thị duy nhất 1 ảnh */
+/* Certifications: chỉ show 1 ảnh duy nhất */
 .cert-col h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -87,22 +93,50 @@
   height: auto;
 }
 
-/* Ẩn overflow nếu có */
+/* Ẩn overflow bất thường */
 .site-footer .footer-container {
   overflow: hidden;
 }
 
-/* Responsive: stack columns */
+/* --- Responsive: mobile dưới 768px --- */
 @media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem;
+    margin-left: 0;
+    left: 0;
+    width: 100%;
+  }
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem 1rem;
+  }
+  /* 1. Logo + Contact toàn hàng */
+  .about-col {
+    order: 1;
+    width: 100%;
+  }
+  /* 2. About InDong */
+  .links-col:nth-of-type(1) {
+    order: 2;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  /* 3. Products */
+  .links-col:nth-of-type(2) {
+    order: 3;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  /* 4. News + Certifications gộp chung hàng */
+  .links-col:nth-of-type(3),
+  .cert-col {
+    order: 4;
+    width: 100%;
+    margin-top: 2rem;
   }
   .footer-certs {
     margin-top: 1rem;
   }
 }
-
 
 
