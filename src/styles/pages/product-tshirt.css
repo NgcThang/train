@@ -118,6 +118,13 @@
   .feature-section.reverse {
     flex-direction: column;
   }
+  .hero-banner {
+    height: 250px;
+  }
+  .feature-power .power-image img {
+    width: 100%;
+    height: auto;
+  } 
 }
 
 

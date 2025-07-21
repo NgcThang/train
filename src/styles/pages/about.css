@@ -177,7 +177,28 @@ company-row.reverse {
 
 /* === Responsive tweaks === */
 @media (max-width: 767px) {
-  .company-row { flex-direction: column; }
+  .company-row { 
+    flex-direction: column; 
+  }
+
+  .about-hero .hero-wrapper img {
+    height: 150px; /* thấp hơn 200px trên desktop */
+    object-fit: cover;
+  }
+
+  .about-hero__overlay h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .company-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-company h2 {
+    text-align: center;
+  }
 }
 
 

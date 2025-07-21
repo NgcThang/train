@@ -21,10 +21,10 @@ import ProductTshirt from './pages/ProductTshirt';
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <TopHead />
       <Header />
-
-      <ScrollToTop />
+      
       <main>
         <Routes>
           <Route path="/"               element={<HomePage />} />
