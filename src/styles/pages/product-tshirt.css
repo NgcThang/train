@@ -1,16 +1,13 @@
 
 /* 1. Hero banner */
 .hero-banner {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   width: 100vw;
   height: 350px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: block;
+  margin: 0 auto;
 ;
 }
 .hero-banner img {
