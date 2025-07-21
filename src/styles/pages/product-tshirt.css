@@ -10,6 +10,8 @@
   height: 350px;
   background-size: cover;
   background-position: center;
+  display: block;
+;
 }
 .hero-banner img {
   width: 100%;
@@ -124,7 +126,7 @@
     flex-direction: column;
   }
   .hero-banner {
-    height: 250px;
+    height: 200px;
   }
   .feature-power .power-image img {
     width: 100%;
