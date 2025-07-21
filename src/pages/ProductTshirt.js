@@ -1,78 +1,136 @@
-// src/pages/ProductTshirt.js
-import React from 'react';
-import '../styles/pages/product-tshirt.css';
+import React from 'react'
+import '../styles/pages/product-tshirt.css'
 
-import tshirtHero    from '../assets/images/products/details/tshirt-hero.jpg';
-import tshirtRange1  from '../assets/images/products/details/tshirt-range-1.jpg';
-import tshirtRange2  from '../assets/images/products/details/tshirt-range-2.jpg';
-import tshirtFair1   from '../assets/images/products/details/tshirt-fairtrade-1.jpg';
-import tshirtFair2   from '../assets/images/products/details/tshirt-fairtrade-2.jpg';
-import tshirtPowerAll from '../assets/images/products/details/tshirt-power-all.jpg';
-import tshirtQuality from '../assets/images/products/details/tshirt-quality.jpg';
+// ảnh
+import tshirtHero   from '../assets/images/products/details/tshirt-hero.jpg'
+import tshirtRange1 from '../assets/images/products/details/tshirt-range-1.jpg'
+import tshirtRange2 from '../assets/images/products/details/tshirt-range-2.jpg'
+import tshirtFair1  from '../assets/images/products/details/tshirt-fairtrade-1.jpg'
+import tshirtFair2  from '../assets/images/products/details/tshirt-fairtrade-2.jpg'
+import tshirtQuality from '../assets/images/products/details/tshirt-quality.jpg'
+import tshirtPowerAll from '../assets/images/products/details/tshirt-power-all.jpg'
 
-import Reviews      from '../components/Reviews';
+// component
+import Customer from '../components/Customers.js'
+import Reviews  from '../components/Reviews.js'
 
-export default function ProductTshirt() {
-  return (
-    <div className="tshirt-page">
-      {/* Hero */}
-      <section className="tshirt-hero">
-        <img src={tshirtHero} alt="T-Shirt Manufacturing Hero" />
-        <div className="tshirt-hero-text">
-          <h1>Custom T-Shirt Manufacturing</h1>
-          <p>
-            At Thygesen, we create premium custom t-shirts tailored to your brand’s exact
-            specifications—from fabric selection and pattern making to printing and finishing.
-            Whether you need basics, fashion styles or performance tees, our turnkey solution
-            ensures superior quality and fast turnaround.
-          </p>
-        </div>
-      </section>
+const ProductTshirt = () => (
+  <div className="product-tshirt">
 
-      {/* Range of Styles */}
-      <section className="tshirt-range">
-        <h2>Our Range of Customized T-Shirts</h2>
-        <div className="range-images">
-          <img src={tshirtRange1} alt="Men's Custom T-Shirts" />
-          <img src={tshirtRange2} alt="Women's Custom T-Shirts" />
-        </div>
-        <p className="range-text">
-          From classic crew-necks and v-necks to oversized and fitted cuts, we deliver a full range
-          of t-shirt styles. Choose your preferred fabric weight, blend, color and finish for a
-          product that perfectly represents your label.
+    {/* Hero banner full-width */}
+    <div
+      className="hero-banner"
+      style={{ backgroundImage: `url(${tshirtHero})` }}
+    />
+
+    {/* 1. Discover An Extensive Range */}
+    <section className="feature-section">
+      <div className="text">
+        <h2>Discover An Extensive Range Of Casual & Fashionwear</h2>
+        <div className="underline" />
+        <p>
+          Our casual & fashionwear manufacturing service caters to diverse preferences,
+          providing a wide array of styles, from classic essentials to the latest trends,
+          all tailored to your fashion brand needs.
         </p>
-      </section>
-
-      {/* Fair Trade */}
-      <section className="tshirt-fairtrade">
-        <h2>Ethical & Fair-Trade Production</h2>
-        <div className="fairtrade-images">
-          <img src={tshirtFair1} alt="Fairtrade Certified Factory" />
-          <img src={tshirtFair2} alt="Fairtrade T-Shirt Production" />
-        </div>
-        <p className="fairtrade-text">
-          All our t-shirts are produced in WRAP and SA8000 certified facilities, ensuring fair
-          wages, safe working conditions and zero child labor. We’re committed to ethical practices
-          at every step.
+        <p>
+          Our commitment to sustainability drives us to use natural and eco-friendly
+          materials, including 100% Cotton, Organic Cotton, BCI Cotton, Cotton/Spandex,
+          Tencel, and Bamboo Viscose/Spandex. With a focus on customer satisfaction,
+          our fashion-forward garments not only look great but also feel comfortable
+          and gentle on the skin.
         </p>
-      </section>
+      </div>
+      <div className="images range">
+        <img src={tshirtRange1} alt="Range style 1" />
+        <img src={tshirtRange2} alt="Range style 2" />
+      </div>
+    </section>
 
-      {/* Power of Fashion */}
-      <section className="tshirt-power">
-        <h2>We Understand the Power of Fashion</h2>
-        <img src={tshirtPowerAll} alt="Fashion Power Gallery" />
-      </section>
+    {/* 2. Fair-Trade & Fair Fashion */}
+    <section className="feature-section reverse">
+      <div className="text">
+        <h2>We Support Fair Trade & Fair Fashion</h2>
+        <div className="underline" />
+        <p>
+          At Thygesen Textile Vietnam, we stand firmly behind fair trade and fair
+          fashion practices. Our commitment to creating a positive social impact
+          and upholding ethical standards drives our manufacturing process.
+        </p>
+        <p>
+          By advocating fair trade, we guarantee fair wages, safe working conditions
+          and opportunities for personal growth and development for the workers involved
+          in our casual & fashionwear manufacturing.
+        </p>
+        <p>
+          We are dedicated to promoting an equitable and responsible supply chain,
+          fostering a culture of fairness and social responsibility in the fashion industry.
+        </p>
+      </div>
+      <div className="images fair">
+        <img src={tshirtFair1} alt="Fair-trade production" />
+        <img src={tshirtFair2} alt="Fair-trade production" />
+      </div>
+    </section>
 
-      {/* Quality & Compliance */}
-      <section className="tshirt-quality">
-        <h2>We Prioritize Quality Control &amp; Compliance</h2>
-        <img src={tshirtQuality} alt="Quality Control Compliance" />
-      </section>
+    <section className="feature-power">
+      <div className="text">
+        <h2>We Understand The Power Of Fashion In Expressing Personalities</h2>
+        <div className="underline"/>
+        <p>
+          Thygesen delivers diverse styles of Casual & Fashion wear, tailored to your
+          preferences, from essential basics to cutting-edge trends. We also offer
+          customized packaging, hangtags and labeling solutions, creating a seamless
+          OEM journey that ensures your customers achieve the perfect look they desire.
+        </p>
+        <p>
+          With our expertise in fashion and unwavering commitment to quality, let Thygesen
+          elevate your brand to new heights of style and satisfaction.
+        </p>
+      </div>
+      <div className="power-image">
+        <img src={tshirtPowerAll} alt="Power Of Fashion" />
+      </div>
+    </section>
 
+    {/* 3. Quality Control & Compliance */}
+    <section className="feature-section">
+      <div className="text">
+        <h2>We Prioritize Quality Control & Industry Compliance</h2>
+        <div className="underline" />
+        <p>
+          Our process includes inline inspections, lab testing and final audits to ensure
+          every tee meets international standards. We hold ISO 9001:2015, ISO 13485:2016
+          and Oeko-Tex certifications to guarantee both quality and safety.
+        </p>
+        <ul>
+          <li>
+            <strong>Material Sourcing/Development:</strong> Materials meet specified standards—
+            fashionable design, comfortable fit, sustainable color.
+          </li>
+          <li>
+            <strong>In-process Inspections:</strong> We check measurements, stitching quality,
+            color consistency and overall workmanship.
+          </li>
+          <li>
+            <strong>Final Inspection:</strong> We welcome third-party audits to validate our
+            standards and ensure transparency.
+          </li>
+        </ul>
+      </div>
+      <div className="images quality">
+        <img src={tshirtQuality} alt="Quality control" />
+      </div>
+    </section>
+
+    {/* Customer logos & Testimonials */}
+    <Customer />
     <Reviews />
-    </div>
-  );
-}
+
+  </div>
+)
+
+export default ProductTshirt
 
 
 

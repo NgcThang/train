@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/icons/logo.jpg';
 import '../styles/components/header.css';
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <header className="site-header">
       <div className="container">
+        {/* Logo */}
         <Link to="/" className="logo-link">
           <img src={logo} alt="Company Logo" className="site-logo" />
         </Link>
-        <nav className="nav">
+
+        {/* Hamburger cho mobile */}
+        <div className="hamburger" onClick={toggleMenu}>
+          <div />
+          <div />
+          <div />
+        </div>
+
+        {/* Navigation */}
+        <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li><Link to="/">Trang chủ</Link></li>
             <li className="menu-item">
-              <p>Sản phẩm</p>
+              <span>Sản phẩm</span>
               <ul className="submenu">
                 <li><Link to="/products/tshirt">Áo thun</Link></li>
                 <li><Link to="/products/activewear">Áo thể thao</Link></li>
@@ -31,7 +45,8 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  );
+);
 }
+
 
 

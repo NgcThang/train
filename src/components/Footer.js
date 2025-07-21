@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/components/footer.css'
 import logo from '../assets/icons/logo.jpg'
-import allCertsImg from '../assets/icons/all-certifications.jpg'
 
 export default function Footer() {
   return (
@@ -28,7 +27,7 @@ export default function Footer() {
         </div>
 
         {/* About */}
-        <div className="footer-col links-col">
+        <div className="footer-col links-col about-links">
           <h4>About InDong</h4>
           <ul>
             <li><Link to="/about">About Us</Link></li>
@@ -40,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* Products */}
-        <div className="footer-col links-col">
+        <div className="footer-col links-col products-links">
           <h4>Products</h4>
           <ul>
             <li><Link to="/products/tshirt">Áo thun</Link></li>
@@ -53,20 +52,14 @@ export default function Footer() {
         </div>
 
         {/* News */}
-        <div className="footer-col links-col">
+        <div className="footer-col links-col news-col">
           <h4>News</h4>
           <ul>
             <li><Link to="/news">News</Link></li>
           </ul>
         </div>
 
-        {/* Certifications */}
-        <div className="footer-col cert-col">
-          <h4>Certifications</h4>
-          <div className="footer-certs">
-            <img src={allCertsImg} alt="All Certifications" />
-          </div>
-        </div>
+        {/* NOTE: bỏ hoàn toàn section Certifications */}
       </div>
     </footer>
   )

@@ -1,202 +1,183 @@
 /* src/styles/pages/about.css */
 
-/* Reset cơ bản và chung */
-.about-page {
-  font-family: "Inter", sans-serif;
-  color: #333;
-  line-height: 1.6;
-  padding: 0 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* === Hero banner === */
+.about-hero .hero-wrapper {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
-
-/* ========================
-   1. INTRO SECTION
-   ======================== */
-.about-intro {
+.about-hero .hero-wrapper img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;  
+}
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 60px 0;
-  gap: 40px;
+  justify-content: center;
 }
-.about-intro .intro-text {
-  flex: 1;
+.about-hero__overlay .container {
+  text-align: center;
+  color: #fff;
 }
-.about-intro .intro-text p {
-  margin-bottom: 1em;
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
-.about-intro .intro-image {
-  flex: 1;
-  text-align: right;
+.breadcrumb a,
+.breadcrumb span {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
 }
-.about-intro .intro-image img {
-  max-width: 100%;
-  border-radius: 4px;
+.about-hero__overlay h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-/* ========================
-   2. QUICK-LINK CARDS
-   ======================== */
+/* === Intro === */
+.about-intro {
+  padding: 60px 0;
+  text-align: center;
+}
+.about-intro p {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* === Quick Links cards === */
 .about-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0;
 }
 .about-card {
+  flex: 1 1 280px;
+  max-width: 320px;
   background: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: left;
+  padding: 20px;
+  text-align: center;
 }
-.about-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-.about-card p {
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-  color: #555;
-}
+.about-card h3 { margin-bottom:12px; }
+.about-card p { margin-bottom:16px; line-height:1.4; }
 .about-card button {
-  background: #f2d06e;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
+  background:#ffc107;
+  border:none;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background .3s;
 }
+.about-card button:hover { background:#e0a800; }
 
-/* ========================
-   3. DETAIL SECTIONS
-   ======================== */
-.about-detail {
-  margin-bottom: 80px;
+/* === Certifications === */
+/* do bởi <Certifications /> */
+
+/* === Journey section === */
+.about-journey {
+  padding: 80px 0;
 }
-.about-detail h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-  position: relative;
+.about-journey h2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
-.about-detail .detail-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.about-detail.reverse .detail-content {
-  flex-direction: row-reverse;
-}
-.about-detail .detail-content .images {
-  flex: 1;
+.about-journey .detail-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
 }
-.about-detail .detail-content .images img {
+.about-journey .detail-content .text {
+  max-width: 800px;
+  line-height: 1.6;
+}
+.about-journey .detail-content .images img {
+  max-width: 800px;
   width: 100%;
-  border-radius: 4px;
-}
-.about-detail .detail-content .text {
-  flex: 1;
-}
-.about-detail .detail-content .text p {
-  color: #444;
-  font-size: 0.95rem;
+  height: auto;
+  border-radius: 8px;
 }
 
-/* ========================
-   4. CSR SUMMARY
-   ======================== */
-.about-detail .csr-text {
-  font-size: 0.95rem;
-  color: #444;
+/* === Thygesen Textile Vietnam === */
+.about-company { padding: 80px 0; }
+.about-company h2 { text-align:left; margin-bottom:24px; }
+.company-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
   margin-bottom: 40px;
 }
+company-row.reverse {
+  flex-direction: row-reverse;
+}
+.company-text { flex:1 1 45%; line-height:1.6; }
+.company-image { flex:1 1 45%; }
+.company-image img { width:100%; height:auto; border-radius:8px; }
 
-/* ========================
-   5. MISSION / VISION / CORE VALUES
-   ======================== */
-.about-corevalues {
+/* === Our Mission/Vision/Core Values === */
+.about-corevalues { padding: 80px 0; background: #fafafa; }
+.about-corevalues h2 { text-align:center; margin-bottom:30px; }
+.core-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.core-text h3 {
+  margin-top: 24px;
+  font-size: 1.2rem;
+}
+.core-text p { margin-top: 8px; }
+.core-image {
   text-align: center;
-  margin-bottom: 80px;
+  margin-top: 40px;
 }
-.about-corevalues h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 32px;
+.core-image img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
-.about-corevalues .corevalues-image {
-  margin-bottom: 32px;
+
+/* === Our CSR expanded === */
+.about-csr-expanded { padding: 80px 0; }
+.about-csr-expanded h2 {
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  text-align: left; 
 }
-.about-corevalues .corevalues-image img {
-  max-width: 100%;
-  border-radius: 4px;
+.csr-expanded {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
-.about-corevalues .corevalues-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+.csr-expanded p {
+  margin-bottom: 16px;
 }
-.about-corevalues .corevalues-list > div {
-  flex: 1;
-  text-align: left;
-}
-.about-corevalues .corevalues-list h4 {
+.csr-expanded h3 {
+  margin-top: 32px;
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
 }
-.about-corevalues .corevalues-list p {
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* ========================
-   6. CERTIFICATIONS
-   ======================== */
-.about-certifications {
-  margin-bottom: 80px;
-  text-align: center;
-}
-.about-certifications h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 32px;
+.csr-expanded ul {
+  margin: 12px 0 0 20px;
+  list-style: disc;
+  line-height: 1.6;
 }
 
-/* ========================
-   RESPONSIVE
-   ======================== */
-@media (max-width: 992px) {
-  .about-intro {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .about-intro .intro-image {
-    text-align: center;
-  }
-
-  .about-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-detail .detail-content {
-    flex-direction: column;
-  }
-
-  .about-corevalues .corevalues-list {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-cards {
-    grid-template-columns: 1fr;
-  }
+/* === Responsive tweaks === */
+@media (max-width: 767px) {
+  .company-row { flex-direction: column; }
 }
 
 
