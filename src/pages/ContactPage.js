@@ -17,7 +17,6 @@ export default function ContactPage() {
   const [showThankYou, setShowThankYou] = useState(false);
   const timeoutRef = useRef(null);
 
-  // Validate required fields
   function validate() {
     let newErrors = {};
     if (!form.email.trim()) newErrors.email = "Please complete this required field.";
@@ -61,8 +60,10 @@ export default function ContactPage() {
 
   return (
     <div className="contact-wrapper">
+      {/* Hero Banner */}
       <div className="contact-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
+      {/* Content Section */}
       <section className="contact-content">
         <div className="contact-info">
           <h2>Let’s Talk</h2>
@@ -159,7 +160,7 @@ export default function ContactPage() {
       {/* Bottom Image */}
       <div className="contact-bottom" style={{ backgroundImage: `url(${bottomImg})` }} />
 
-      {/* Thank You Popup */}
+      {/* Thank You Overlay Popup (LUÔN ĐẶT Ở NGOÀI CÙNG) */}
       {showThankYou && (
         <div className="thankyou-overlay">
           <div className="thankyou-popup">
@@ -173,6 +174,5 @@ export default function ContactPage() {
     </div>
   );
 }
-
 
 
