@@ -15,13 +15,15 @@ import Customer from '../components/Customers.js'
 import Reviews  from '../components/Reviews.js'
 
 const ProductTshirt = () => (
+
+  
   <div className="product-tshirt">
 
     {/* Hero banner full-width */}
     <div
       className="hero-banner"
       style={{ backgroundImage: `url(${tshirtHero})` }}
-    />
+    />  
 
     {/* 1. Discover An Extensive Range */}
     <section className="feature-section">

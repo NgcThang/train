@@ -6,12 +6,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: block;
-  margin: 0 auto;
+  margin-left: calc(50% - 50vw);
 ;
 }
 .hero-banner img {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
 }

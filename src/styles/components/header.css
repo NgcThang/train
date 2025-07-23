@@ -147,6 +147,8 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    text-align: right;
+    align-items: flex-end;
   }
 
   .menu-item > span::after {
@@ -158,10 +160,13 @@
     background: transparent;
     box-shadow: none;
     margin-top: 0;
+    text-align: right;
+    align-items: flex-end;
   }
 
   .submenu li {
-    padding-left: 1rem;
+    padding-left: 0;
+    padding-right: 1rem;
   }
 }
 
