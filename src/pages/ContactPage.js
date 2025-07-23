@@ -1,62 +1,73 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/pages/contact.css';
 import heroImg from '../assets/images/contact-hero.jpg';
 import bottomImg from '../assets/images/contact-bottom.jpg';
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    country: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({});
   const [showThankYou, setShowThankYou] = useState(false);
-  const timerRef = useRef(null);
+  const timeoutRef = useRef(null);
 
-  function handleSubmit(e) {
+  // Validate required fields
+  function validate() {
+    let newErrors = {};
+    if (!form.email.trim()) newErrors.email = "Please complete this required field.";
+    if (!form.country.trim()) newErrors.country = "Please complete this required field.";
+    if (!form.subject.trim()) newErrors.subject = "Please complete this required field.";
+    return newErrors;
+  }
+
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: undefined });
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch('https://formspree.io/f/mblkgqjq', {
-      method: 'POST',
-      body: data,
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    // Submit to Formspree
+    const formData = new FormData();
+    Object.keys(form).forEach(key => formData.append(key, form[key]));
+    await fetch("https://formspree.io/f/mblkgqjq", {
+      method: "POST",
+      body: formData,
       headers: { 'Accept': 'application/json' }
-    })
-      .then(res => {
-        if (res.ok) {
-          setShowThankYou(true);
-          form.reset();
-          // Sau 10s thì trở lại contact và ẩn popup
-          timerRef.current = setTimeout(() => {
-            setShowThankYou(false);
-            window.location.href = "/contact";
-          }, 10000);
-        }
-      });
+    });
+    setShowThankYou(true);
+    setForm({
+      firstName: '', lastName: '', email: '', country: '',
+      phone: '', subject: '', message: ''
+    });
+    timeoutRef.current = setTimeout(() => setShowThankYou(false), 10000);
   }
 
-  function handleBack() {
+  function handleCloseThankYou() {
     setShowThankYou(false);
-    window.location.href = "/contact";
+    clearTimeout(timeoutRef.current);
   }
-
-  useEffect(() => {
-    return () => clearTimeout(timerRef.current);
-  }, []);
 
   return (
     <div className="contact-wrapper">
-      {/* Hero Banner */}
       <div className="contact-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
-      {/* Content Section */}
       <section className="contact-content">
-        {/* Left Intro Text */}
         <div className="contact-info">
           <h2>Let’s Talk</h2>
-          <p>
-            Whether you have questions about our services, need a quote, or just want to say hello,
-            our team is ready to help. Fill out the form and we’ll be in touch shortly.
-          </p>
-          <p>
-            We are always open to discuss new projects, creative ideas or opportunities to be part of your vision.
-          </p>
-
+          <p>Whether you have questions about our services, need a quote, or just want to say hello, our team is ready to help. Fill out the form and we’ll be in touch shortly.</p>
+          <p>We are always open to discuss new projects, creative ideas or opportunities to be part of your vision.</p>
           <div className="company-details">
             <p><strong>INDONG EPIC COMPANY LIMITED</strong></p>
             <p>📍 Cụm CN Đồng Sóc, Vĩnh Tường, Việt Nam</p>
@@ -66,65 +77,99 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Right Form */}
-        <div className="contact-form-wrapper">
-          {showThankYou ? (
-            <div className="thankyou-popup">
-              <h2>Thank you!</h2>
-              <p>Your message has been submitted successfully.</p>
-              <button onClick={handleBack}>Go Back</button>
-              <p style={{ marginTop: 8, color: '#888' }}>
-                You will be redirected in 10 seconds...
-              </p>
+        <form className="contact-form" onSubmit={handleSubmit} autoComplete="off">
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" value={form.firstName} onChange={handleChange} />
             </div>
-          ) : (
-            <form className="contact-form" onSubmit={handleSubmit} autoComplete="off">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="firstName">First Name</label>
-                  <input type="text" id="firstName" name="firstName" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="lastName">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" required />
-                </div>
-              </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" value={form.lastName} onChange={handleChange} />
+            </div>
+          </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="email">Email*</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="country">Country/Region*</label>
-                  <input type="text" id="country" name="country" required />
-                </div>
-              </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="email">Email<span style={{ color: 'red' }}>*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+              {errors.email && <div className="form-error">{errors.email}</div>}
+            </div>
+            <div className="form-group">
+              <label htmlFor="country">Country/Region<span style={{ color: 'red' }}>*</span></label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                value={form.country}
+                onChange={handleChange}
+                required
+              />
+              {errors.country && <div className="form-error">{errors.country}</div>}
+            </div>
+          </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="subject">Inquiry Subject</label>
-                  <input type="text" id="subject" name="subject" />
-                </div>
-              </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="subject">Inquiry Subject<span style={{ color: 'red' }}>*</span></label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
+                required
+              />
+              {errors.subject && <div className="form-error">{errors.subject}</div>}
+            </div>
+          </div>
 
-              <div className="form-group full-width">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="4" />
-              </div>
+          <div className="form-group full-width">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              value={form.message}
+              onChange={handleChange}
+            />
+          </div>
 
-              <button type="submit">Submit</button>
-            </form>
-          )}
-        </div>
+          <button type="submit">Submit</button>
+        </form>
       </section>
 
       {/* Bottom Image */}
       <div className="contact-bottom" style={{ backgroundImage: `url(${bottomImg})` }} />
+
+      {/* Thank You Popup */}
+      {showThankYou && (
+        <div className="thankyou-overlay">
+          <div className="thankyou-popup">
+            <h2>Thank you!</h2>
+            <div>Your message has been submitted.<br />We will contact you soon.</div>
+            <button onClick={handleCloseThankYou}>Back to contact page</button>
+            <div style={{ fontSize: "0.97rem", color: "#666", marginTop: 8 }}>You’ll be redirected after 10 seconds.</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

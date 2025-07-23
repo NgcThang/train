@@ -122,6 +122,13 @@
   background: #ffcf1a;
 }
 
+.form-error {
+  color: #d9292f;
+  font-size: 0.97em;
+  margin-top: 3px;
+  min-height: 20px;
+}
+
 /* Bottom image */
 .contact-bottom {
   width: 100vw;
