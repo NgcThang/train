@@ -9,9 +9,10 @@
   <body>
     <div id="nc-root"></div>
     <!-- Netlify CMS App -->
-    <script src="https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms.js"></script>
+    <!-- Sử dụng latest version hoặc v2.10.192 (ổn định) -->
+    <script src="https://unpkg.com/netlify-cms-app@2.10.192/dist/netlify-cms.js"></script>
     <script>
-      // Sử dụng custom backend (Auth0), không cần Identity widget
+      // Dùng custom backend (Auth0), không cần Identity widget
       window.CMS_MANUAL_INIT = true;
       NetlifyCms.init();
     </script>
