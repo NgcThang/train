@@ -2,16 +2,15 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Trang demo</title>
+  <title>Trình quản lý nội dung</title>
 </head>
 <body>
   <!-- Netlify CMS core -->
-  <script src="https://unpkg.com/netlify-cms-app/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms-app@^2.15.0/dist/netlify-cms.js"></script>
 
-  <!-- Netlify Identity widget để xác thực qua Auth0 -->
+  <!-- Netlify Identity widget (Auth0 qua Netlify Identity) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    // Khởi tạo widget Netlify Identity
     if (window.netlifyIdentity) {
       window.netlifyIdentity.init();
     }
