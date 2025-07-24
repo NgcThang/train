@@ -2,19 +2,11 @@
   command = "npm run build"
   publish = "build"
 
-# Luôn redirect chính xác cho Netlify CMS Admin
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
-
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+  force = true
 
-# Fallback cho SPA (React app)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+
+

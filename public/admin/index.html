@@ -7,19 +7,16 @@
   <title>Trình quản lý nội dung - Netlify CMS</title>
 </head>
 <body>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <div id="nc-root"></div>
   <script src="https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms.js"></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    // Tự động đọc config.yml, không cần khai báo thủ công nếu file đúng vị trí (public/admin/config.yml)
+    // Nếu bạn cần custom sâu, thì dùng CMS_MANUAL_INIT (không khuyến khích khi mới setup).
+    // window.CMS_MANUAL_INIT = true;
+    // window.CMS.init({ ... });
   </script>
 </body>
 </html>
+
+
 

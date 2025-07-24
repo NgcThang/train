@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: auth0
+  client_id: "qom6ycpdr7D7aQtlGDTpP75C6Wf93bvR"
+  domain: "dev-pkdcmptn45vszocq.us.auth0.com"
+  # Nếu cần có: base_url, redirect_uri, audience (đôi khi Auth0 yêu cầu audience)
+  # base_url: "https://indong-test.netlify.app"
+  # redirect_uri: "https://indong-test.netlify.app/admin/"
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -15,3 +19,6 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+
