@@ -7,13 +7,14 @@
 <body>
   <!-- Netlify CMS core -->
   <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app@2.15.0/dist/netlify-cms.js"></script>
-
   <!-- Netlify Identity widget (Auth0 qua Netlify Identity) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.init();
     }
+    // KHỞI TẠO CMS NGAY SAU KHI LOAD SCRIPT
+    if (window.CMS) window.CMS.init();
   </script>
 </body>
 </html>
