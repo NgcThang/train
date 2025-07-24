@@ -3,10 +3,16 @@
   publish = "build"
 
 [[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
 
+# Fallback SPA còn lại
 [[redirects]]
   from = "/*"
   to = "/index.html"
